@@ -15,38 +15,20 @@ class SodaMachine
 
   # find single soda with a given brand
   def find_soda(soda_brand)
-    @sodas.each do |soda|
-      if soda.brand == soda_brand
-        return soda
-      else
-        nil
-      end
-    end
+    @sodas.find {|soda| soda.brand == soda_brand}
   end
 
   # sell a soda with a given brand
   def sell(soda_brand)
-    if @sodas.include(soda_brand) then false
-      nil
-    elsif
-      @sodas.each do |soda|
-        if soda.brand == soda_brand
-          @cash += soda.price
-          @sodas.delete(soda)
-          @cash
-        else
-          nil
-        end
-      end
-    else
-      nil
+    return nil unless
+      @sold_soda = find_soda(soda_brand)
+      @cash += @sold_soda.price
+      @sodas.delete(@sold_soda)
     end
   end
 
-end
-
-machine = SodaMachine.new
-p machine.current_inventory_count
-p machine.find_soda("Mountain Dew")
-p machine.find_soda("Surge")
-p machine.sell("Surge")
+# NOTES
+# Remember to look at the Rspec tests for clues
+# Notice @sold_soda, D U H
+# lines 26 + 34 are the same
+# lines 40 + 43 are the same
