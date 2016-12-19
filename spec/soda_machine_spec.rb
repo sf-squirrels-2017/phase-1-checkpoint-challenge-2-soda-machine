@@ -37,16 +37,19 @@ describe SodaMachine do
 
     context "when the soda is available to be sold" do
       before(:each) do
-        @sold_soda = soda_machine.sell('Coke Zero')
+        @sold_soda = soda_machine.sell('Pepsi')
       end
       it "returns the sold soda" do
-        expect(@sold_soda).to be(coke_zero)
+        expect(@sold_soda).to be(pepsi)
       end
       it "adds the price of the soda sold to the cash" do
-        expect(soda_machine.cash).to eq(2.00)
+        expect(soda_machine.cash).to eq(1.65)
       end
       it "removes the sold soda from the machine" do
-        expect(soda_machine.sodas).not_to include(coke_zero)
+        expect(soda_machine.sodas).not_to include(pepsi)
+      end
+      it "only removes one soda from the machine" do
+        expect(soda_machine.sodas).to include(second_pepsi)
       end
     end
   end
