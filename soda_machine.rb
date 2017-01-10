@@ -15,7 +15,7 @@ class SodaMachine
     # @sodas.key({"brand" => soda_brand})
     # @sodas.select {|e| e == soda_brand}
     # @sodas.detect {|e| e == soda_brand}
-    @sodas.select {|y| y == soda_brand}
+    @sodas.find {|soda| soda.brand == soda_brand}
     # p "the value is #{soda_brand}"
 
   end
