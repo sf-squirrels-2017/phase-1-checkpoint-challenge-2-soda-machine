@@ -13,10 +13,7 @@ class SodaMachine < Soda
   end
 
   def find_soda(soda_brand)
-    @sodas.each do |soda|
-      return soda if soda.brand[soda_brand]
-    end
-    nil
+    @sodas.find { |soda| soda.brand == soda_brand }
   end
 
   def sell(soda_brand)
