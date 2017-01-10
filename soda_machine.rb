@@ -17,5 +17,4 @@ class SodaMachine
   def sell(soda_brand)
 
   end
-
 end
