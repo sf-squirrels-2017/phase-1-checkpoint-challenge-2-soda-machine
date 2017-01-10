@@ -1,6 +1,4 @@
-require_relative 'soda'
-
-class SodaMachine < Soda
+class SodaMachine
   attr_reader :sodas, :cash
 
   def initialize(args = {})
@@ -18,8 +16,7 @@ class SodaMachine < Soda
 
   def sell(soda_brand)
     sold_soda = find_soda(soda_brand)
-    return sold_soda if sold_soda.nil?
-    @cash += sold_soda.price
+    @cash += sold_soda.price if sold_soda
     @sodas.delete(sold_soda)
   end
 
