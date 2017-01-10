@@ -18,6 +18,14 @@ class SodaMachine
   end
 
   def sell(soda_brand)
+    @sodas.each_with_index do |soda, index|
+      if soda.brand == soda_brand
+        @cash += soda.price
+        sold_sods = soda
+        @sodas.delete_at(index)
+        return soda
+      end
+    end
+    nil
   end
-
 end
