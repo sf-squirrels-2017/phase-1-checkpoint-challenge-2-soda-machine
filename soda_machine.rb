@@ -7,6 +7,7 @@ class SodaMachine
   end
 
   def current_inventory_count
+    self.sodas.length
   end
 
   def find_soda(soda_brand)
