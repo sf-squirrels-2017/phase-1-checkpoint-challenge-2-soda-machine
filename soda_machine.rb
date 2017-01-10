@@ -15,7 +15,7 @@ class SodaMachine
     self.sodas.find {|soda| soda.brand == soda_brand}
   end
 
-
+# return nil unless sold_soda to minimize code
   def sell(soda_brand)
     sold_soda = find_soda(soda_brand)
     unless sold_soda.nil?
