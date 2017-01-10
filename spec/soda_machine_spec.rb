@@ -53,5 +53,4 @@ describe SodaMachine do
       end
     end
   end
-
-end
+ end
