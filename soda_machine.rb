@@ -1,6 +1,6 @@
 class SodaMachine
-  attr_reader :sodas, :cash
-  attr_writer :cash
+  attr_reader :sodas
+  attr_accessor :cash
 
   def initialize(args = {})
     @sodas = args[:sodas]
@@ -15,22 +15,13 @@ class SodaMachine
     self.sodas.find {|soda| soda.brand == soda_brand}
   end
 
-  # def sell(soda_brand)
-  #   sold_soda = find_soda(soda_brand)
-  #   sold_soda ? self.cash += sold_soda.price
-  #   # self.sodas.delete(sold_soda)
-  #   sold_soda
-  # end
-
-
 
   def sell(soda_brand)
     sold_soda = find_soda(soda_brand)
-    if sold_soda
+    unless sold_soda.nil?
       self.cash += sold_soda.price
-      sodas.delete(sold_soda)
+      self.sodas.delete(sold_soda)
     end
-    sold_soda
   end
 
 end
