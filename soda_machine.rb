@@ -11,10 +11,18 @@ class SodaMachine
   end
 
   def find_soda(soda_brand)
-    @sodas.include?(soda_brand)
+    # in this array of instances of soda called @sodas which has a
+    # brand, price, and age, as a hash
+    # find the first instance that
+    # a soda brand occurs.
+    # what do I return? the value of soda?
+    # @sodas.find {|soda| Soda.new == soda_brand}
+    # @sodas.find {|soda| Soda.new(:brand) == soda_brand}
+
   end
 
   def sell(soda_brand)
+
   end
 
 end
