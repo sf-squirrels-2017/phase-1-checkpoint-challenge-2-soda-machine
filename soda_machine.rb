@@ -14,9 +14,7 @@ class SodaMachine < Soda
 
   def find_soda(soda_brand)
     @sodas.each do |soda|
-      if soda.brand[soda_brand]
-        return soda
-      end
+      return soda if soda.brand[soda_brand]
     end
     nil
   end
@@ -25,8 +23,7 @@ class SodaMachine < Soda
     if find_soda(soda_brand)
       sold_soda = find_soda(soda_brand)
       @cash += sold_soda.price
-      # Can't figure out why this isn't working, and why it blows everything up:
-      # @sodas.delete.sold_soda
+      @sodas.delete(sold_soda)
     else
       return find_soda(soda_brand)
     end
