@@ -18,11 +18,13 @@ class SodaMachine
     # what do I return? the value of soda?
     # @sodas.find {|soda| Soda.new == soda_brand}
     # @sodas.find {|soda| Soda.new(:brand) == soda_brand}
-
+    @sodas.find { |soda| soda.brand == soda_brand }
   end
 
   def sell(soda_brand)
-
+    return nil unless
+        sold_soda = find_soda(soda_brand)
+        @cash += sold_soda.price
+        @sodas.delete(sold_soda)
   end
-
 end
