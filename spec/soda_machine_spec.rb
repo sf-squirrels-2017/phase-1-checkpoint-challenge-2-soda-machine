@@ -54,4 +54,12 @@ describe SodaMachine do
     end
   end
 
+  describe "#find_soda with minimum price", { find_soda: true } do
+    context "return soda with minimum price" do
+      it "returns nil" do
+        expect(soda_machine.find_least_expensive).to eq('Pepsi')
+      end
+    end
+  end
+
 end

@@ -21,4 +21,9 @@ class SodaMachine
       @sodas.delete(soda)
     end
   end
+
+  def find_least_expensive
+    sodas = @sodas.sort_by{|soda| soda.price}
+    sodas.first.brand
+  end
 end
