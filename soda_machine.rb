@@ -25,7 +25,8 @@ class SodaMachine < Soda
     if find_soda(soda_brand)
       sold_soda = find_soda(soda_brand)
       @cash += sold_soda.price
-      # @sodas.delete.sold_soda # Can't figure out why this isn't working, and why it blows everything up
+      # Can't figure out why this isn't working, and why it blows everything up:
+      # @sodas.delete.sold_soda
     else
       return find_soda(soda_brand)
     end
