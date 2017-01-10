@@ -22,6 +22,7 @@ class SodaMachine
     return nil if soda.nil?
     @cash += soda.price
     @sodas.delete(soda)
+    #
   end
 
 end
