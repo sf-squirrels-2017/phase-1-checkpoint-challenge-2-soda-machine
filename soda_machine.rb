@@ -22,5 +22,6 @@ class SodaMachine
       nil
     end
   end
-
 end
+
+
