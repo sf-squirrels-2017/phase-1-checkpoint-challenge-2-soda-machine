@@ -9,7 +9,7 @@ class SodaMachine
   end
 
   def current_inventory_count
-    @sodas.length # or .size
+    @sodas.length # or .size .count
   end
 
   def find_soda(soda_brand)
@@ -18,22 +18,8 @@ class SodaMachine
 
   def sell(soda_brand)
     return nil unless
-      @sold_soda = find_soda(soda_brand)
-      @sodas.delete(@sold_soda)
-      @cash += @sold_soda.price
-      @sold_soda
+      sold_soda = find_soda(soda_brand)
+      @cash += sold_soda.price
+      @sodas.delete(sold_soda)
     end
-
-    #   if @sold_soda = find_soda(soda_brand)
-    #     @sodas.delete(@sold_soda)
-    #     @cash += @sold_soda.price
-    #     return @sold_soda
-    #   else
-    #     nil
-    #   end
-    # end
   end
-
-# NOTES
-# Remember to look at the Rspec tests for clues
-# Notice @sold_soda, D U H
