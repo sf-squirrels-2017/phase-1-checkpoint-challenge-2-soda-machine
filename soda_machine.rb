@@ -21,6 +21,7 @@ class SodaMachine
   # end
 
   # Refactored Method
+
   def find_soda(soda_brand)
     @sodas.find {|soda| soda.brand == soda_brand}
   end
@@ -34,6 +35,7 @@ class SodaMachine
   # end
 
   # Refactored Method
+  
   def sell(soda_brand)
     sold_soda = @sodas.delete(find_soda(soda_brand))
     if sold_soda
